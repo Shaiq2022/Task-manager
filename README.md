@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Task Manager (React)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## 🇦🇿 Haqqında
 
-## Available Scripts
+Bu layihə React ilə hazırlanmış inkişaf etmiş Task Manager tətbiqidir.  
+Sadə CRUD tətbiqi olmaqdan əlavə, Undo/Redo sistemi, keyboard shortcuts və localStorage persist kimi real məhsul xüsusiyyətlərinə malikdir.
 
-In the project directory, you can run:
+## 🇬🇧 About
 
-### `npm start`
+An advanced Task Manager built with React.  
+Beyond basic CRUD functionality, it includes Undo/Redo history, keyboard shortcuts, and persistent state using localStorage.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Live Demo
+> Deploy etdikdən sonra link əlavə olunacaq.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ✨ Features
 
-### `npm run build`
+### Core
+- Add / Edit / Delete tasks
+- Toggle completed state
+- Inline edit (double click → edit mode)
+- Auto-save on blur
+- Auto-select text when editing
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Filtering & Search
+- Filter: All / Active / Completed
+- Real-time search
+- Clear search (× button)
+- "No results found" state
+- Empty state UI
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Keyboard Shortcuts
+- `/` → Focus search
+- `1` → All
+- `2` → Active
+- `3` → Completed
+- `Esc` → Clear search
+- `Ctrl + Z` → Undo
+- `Ctrl + Y` or `Ctrl + Shift + Z` → Redo
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Advanced Logic
+- Undo/Redo system with history stack
+- Persistent history (refresh sonrası da işləyir)
+- History limit applied (to prevent storage overflow)
+- LocalStorage persistence (tasks, filter, query)
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 🛠 Tech Stack
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- React (Hooks: useState, useEffect, useRef)
+- JavaScript (ES6+)
+- CSS
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 📦 Getting Started
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```bash
+git clone https://github.com/your-username/task-manager.git
+cd task-manager
+npm install
+npm start

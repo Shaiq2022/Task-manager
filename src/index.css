@@ -1,13 +1,279 @@
-body {
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f8;
+  min-height: 100vh;
+  color: #333;
+}
+
+.app {
+  max-width: 500px;
+  margin: 60px auto;
+  background: #fff;
+  padding: 24px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.app h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+.edit-input { /* Yeni: Editing input-u üçün stil */
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #4f46e5;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button {
+  padding: 10px 14px;
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #4338ca;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #f9fafb;
+  border-radius: 6px;
+}
+
+.task-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #4f46e5;
+}
+
+.task-item span {
+  flex: 1;
+  cursor: pointer;
+}
+
+.task-item.completed span {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.task-item button {
+  background: #ef4444;
+}
+
+.task-item button:hover {
+  background: #dc2626;
+}
+
+.task-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.empty {
+  text-align: center;
+  font-style: italic;
+  color: #777;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #4338ca;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #f9fafb;
+  border-radius: 6px;
+}
+
+.task-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #4f46e5;
+}
+
+.task-item span {
+  flex: 1;
+  cursor: pointer;
+}
+
+.task-item.completed span {
+  text-decoration: line-through;
+  color: #999;
+}
+
+.task-item button {
+  background: #ef4444;
+}
+
+.task-item button:hover {
+  background: #dc2626;
+}
+
+.task-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.empty {
+  text-align: center;
+  font-style: italic;
+  color: #777;
+  margin-top: 10px;
+}
+.filters {
+  display: flex;
+  gap: 6px;
+}
+
+.filters button {
+  background: transparent;
+  color: #4f46e5;
+  border: 1px solid #4f46e5;
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.filters button.active {
+  background: #4f46e5;
+  color: white;
+}
+.search-input {
+  width: 100%;
+  padding: 10px  12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  
+}
+.search-input:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+.search-wrap {
+  color: #4338ca;
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 40px 10px 12px; /* sağda X üçün yer */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+.search-clear {
+  position: absolute;
+  right: 8px;
+  top: 36%;
+  transform: translateY(-50%);
+
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+
+  background-color:  #dc2626;  /* <-- əsas */
+  border: 1px solid #ddd;   /* <-- ağ görünməsin deyə */
+  color: #333;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 18px;
+  padding: 0;
+}
+
+.search-clear:hover {
+  background: #ddd;
+}
+.task-form button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.empty-state,
+.no-results {
+  text-align: center;
+  opacity: 0.75;
+  margin-top: 32px;
+}
+
+.empty-state h3,
+.no-results h3 {
+  margin-bottom: 6px;
+}
+
+.empty-state p,
+.no-results p {
+  margin: 0;
+}
+.task-item button {
+  opacity: 0.7;
+}
+
+.task-item:hover button {
+  opacity: 1;
 }
