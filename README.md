@@ -61,7 +61,7 @@ Beyond basic CRUD functionality, it includes Undo/Redo history, keyboard shortcu
 ## 📦 Getting Started
 
 ```bash
-git clone https://github.com/your-username/task-manager.git
+git clone https://github.com/Shaiq2022/task-manager.git
 cd task-manager
 npm install
 npm start

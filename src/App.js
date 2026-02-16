@@ -174,7 +174,7 @@ useEffect(() => {
 
   window.addEventListener("keydown", onKeyDown);
   return () => window.removeEventListener("keydown", onKeyDown);
-}, [query, tasks]);
+}, [query, tasks, undo, redo]);
 
   const deleteTask = (id) => {
     commitTasks(tasks.filter((task) => task.id !== id));
