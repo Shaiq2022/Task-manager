@@ -1,4 +1,4 @@
-import { useEffect,useRef, useState } from "react";
+import { useEffect,useRef, useState,useCallback } from "react";
 import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
 import "./index.css";
@@ -17,6 +17,12 @@ const HISTORY_LIMIT = 50;
     const saved = localStorage.getItem("tasks");
     return saved ? JSON.parse(saved) : DEFAULT_TASKS;
   });
+  const tasksRef = useRef(tasks);
+
+useEffect(() => {
+  tasksRef.current = tasks;
+}, [tasks]);
+
 // ✅ Undo / Redo üçün history
 const [past, setPast] = useState(() => {
   const saved = localStorage.getItem("history_past");
@@ -80,37 +86,38 @@ const commitTasks = (nextTasks) => {
       )
     );
   };
-const undo = () => {
+const undo = useCallback(() => {
   setPast((p) => {
     if (p.length === 0) return p;
 
     const previous = p[p.length - 1];
 
     // indiki vəziyyəti redo üçün saxla
-    setFuture((f) => [tasks, ...f]);
+    setFuture((f) => [tasksRef.current, ...f]);
 
     // geri qayıt
     setTasks(previous);
 
     return p.slice(0, -1);
   });
-};
+}, []);
 
-const redo = () => {
+const redo = useCallback(() => {
   setFuture((f) => {
     if (f.length === 0) return f;
 
     const next = f[0];
 
     // indiki vəziyyəti undo üçün saxla
-    setPast((p) => [...p, tasks]);
+    setPast((p) => [...p, tasksRef.current]);
 
     // irəli get
     setTasks(next);
 
     return f.slice(1);
   });
-};
+}, []);
+
 
 
 
@@ -174,7 +181,7 @@ useEffect(() => {
 
   window.addEventListener("keydown", onKeyDown);
   return () => window.removeEventListener("keydown", onKeyDown);
-}, [query, tasks, undo, redo]);
+}, [query, undo, redo]);
 
   const deleteTask = (id) => {
     commitTasks(tasks.filter((task) => task.id !== id));
