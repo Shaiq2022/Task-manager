@@ -105,10 +105,10 @@ ul {
 }
 
 .task-footer {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  font-size: 14px;
+display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
 }
 
 .empty {
@@ -168,6 +168,10 @@ ul {
   margin-top: 20px;
   font-size: 14px;
 }
+.task-footer > span{
+  flex: 1 1 140px;
+  min-width: 140px;
+}
 
 .empty {
   text-align: center;
@@ -175,9 +179,16 @@ ul {
   color: #777;
   margin-top: 10px;
 }
-.filters {
+.filters{
   display: flex;
-  gap: 6px;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex: 2 1 260px;
+  min-width: 240px;
+}
+.task-footer > button{
+  flex: 1 1 160px;
+  min-width: 160px;
 }
 
 .filters button {
@@ -276,4 +287,21 @@ ul {
 
 .task-item:hover button {
   opacity: 1;
+}
+@media (max-width: 600px){
+  .task-footer{
+    align-items: stretch;
+  }
+
+  .task-footer > span,
+  .filters,
+  .task-footer > button{
+    flex: 1 1 100%;
+    min-width: 0;
+  }
+
+  .filters button,
+  .task-footer > button{
+    width: 100%;
+  }
 }
