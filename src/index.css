@@ -98,6 +98,7 @@ ul {
 
 .task-item button {
   background: #ef4444;
+   opacity: 0.7;
 }
 
 .task-item button:hover {
@@ -154,13 +155,6 @@ ul {
   color: #999;
 }
 
-.task-item button {
-  background: #ef4444;
-}
-
-.task-item button:hover {
-  background: #dc2626;
-}
 
 .task-footer {
   display: flex;
@@ -281,9 +275,6 @@ ul {
 .no-results p {
   margin: 0;
 }
-.task-item button {
-  opacity: 0.7;
-}
 
 .task-item:hover button {
   opacity: 1;
@@ -304,4 +295,18 @@ ul {
   .task-footer > button{
     width: 100%;
   }
+}
+.drag-handle{
+  cursor: grab;
+  background: transparent;
+  border: none;
+  padding: 6px 8px;
+  user-select: none;
+}
+.drag-handle:active{ cursor: grabbing; }
+
+.task-item{
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
