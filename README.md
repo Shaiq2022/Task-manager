@@ -47,7 +47,9 @@ Beyond basic CRUD functionality, it includes Undo/Redo history, keyboard shortcu
 - Persistent history (refresh sonrası da işləyir)
 - History limit applied (to prevent storage overflow)
 - LocalStorage persistence (tasks, filter, query)
-
+- Drag & Drop reordering (dnd-kit)
+- Filter-safe reorder logic
+- Stable CI-safe useEffect dependency handling
 ---
 
 ## 🛠 Tech Stack
@@ -55,7 +57,7 @@ Beyond basic CRUD functionality, it includes Undo/Redo history, keyboard shortcu
 - React (Hooks: useState, useEffect, useRef)
 - JavaScript (ES6+)
 - CSS
-
+- dnd-kit (Drag & Drop)
 ---
 
 ## 📦 Getting Started
